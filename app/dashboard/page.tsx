@@ -1,28 +1,23 @@
-'use client';
+"use client";
 
 import { useDisclosure } from "@mantine/hooks";
-import { AppShell, Burger } from '@mantine/core';
+import { AppShell, Burger } from "@mantine/core";
 
-export default function Home() {
-const [opened, { toggle }] = useDisclosure();
+export default function Dashboard() {
+  const [opened, { toggle }] = useDisclosure();
 
   return (
     <AppShell
       header={{ height: 60 }}
       navbar={{
         width: 300,
-        breakpoint: 'sm',
+        breakpoint: "sm",
         collapsed: { mobile: !opened },
       }}
       padding="md"
     >
       <AppShell.Header>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          hiddenFrom="sm"
-          size="sm"
-        />
+        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         <div>Logo</div>
       </AppShell.Header>
 
@@ -30,5 +25,5 @@ const [opened, { toggle }] = useDisclosure();
 
       <AppShell.Main>Main</AppShell.Main>
     </AppShell>
-  )
+  );
 }
